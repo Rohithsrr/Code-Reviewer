@@ -1,8 +1,9 @@
+import os
 import streamlit as st
 import google.generativeai as genai
 
 # Set API keys (Replace with your actual API keys)
-GOOGLE_API_KEY = "AIzaSyDtY_3u6RvOWUebu54gDtgNmNxQKv1gh0Y"
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
 genai.configure(api_key=GOOGLE_API_KEY)
 
 def review_code_gemini(code):
